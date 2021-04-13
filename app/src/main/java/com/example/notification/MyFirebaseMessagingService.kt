@@ -14,8 +14,9 @@ import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
-
-
+    companion object {
+        const val IMAGE_URL_KEY = "image_url"
+    }
     private val TAG = MyFirebaseMessagingService::class.java.simpleName
     //This is a special function that is called when a message is received from the firebase console or
     // by your app’s backend, in this function you have to create and show the notification.
@@ -65,9 +66,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
         // to Show notification
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build())
-    }
-    companion object {
-        const val IMAGE_URL_KEY = "image_url"
     }
 
 }
